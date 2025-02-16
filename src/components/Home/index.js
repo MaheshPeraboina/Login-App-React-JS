@@ -23,12 +23,8 @@ class Home extends Component {
       <div className="app-container">
         <div className="home-container">
           <Message isLoggedIn={isLoggedIn} />
-
-          {!isLoggedIn ? (
-            <Login login={this.onClickedButton} />
-          ) : (
-            <Logout logout={this.onClickedButton} />
-          )}
+          {isLoggedIn && <Logout logout={this.onClickedButton} />}
+          {!isLoggedIn && <Login login={this.onClickedButton} />}
         </div>
       </div>
     )
